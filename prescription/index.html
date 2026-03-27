@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Digital Prescription</title>
+
+<style>
+/* PAGE */
+@page {
+  size: A4;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* SECTION */
+.content {
+  margin: 0;
+}
+
+.section {
+  margin-top: 20px;
+  page-break-inside: avoid;
+  break-inside: avoid-page;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0a8f7a;
+  page-break-after: avoid;
+  break-after: avoid-page;
+}
+
+.rx-label {
+  color: #d92d20;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+  margin-top: 8px;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-size: 13px;
+  page-break-before: avoid;
+  break-inside: auto;
+}
+
+thead {
+  display: table-header-group;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+tr {
+  break-inside: avoid;
+}
+
+th {
+  background: #f5f5f5;
+}
+
+/* STATUS */
+.low { color: blue; font-weight: bold; }
+.high { color: red; font-weight: bold; }
+.normal { color: green; font-weight: bold; }
+
+/* REMARKS */
+.remark {
+  margin-top: 10px;
+  padding: 10px;
+  background: #f9f9f9;
+  font-size: 13px;
+  border-left: 4px solid #0a8f7a;
+}
+
+/* PATIENT / PRESCRIPTION META GRID */
+.meta-grid {
+  margin: 8px 0 12px 0;
+  border: 1px solid #c7cfd8;
+  background: #f7f9fc;
+  padding: 10px 12px;
+}
+
+.meta-grid-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 26px;
+}
+
+.meta-col {
+  display: grid;
+  row-gap: 6px;
+}
+
+.meta-row {
+  display: grid;
+  grid-template-columns: 138px 14px 1fr;
+  align-items: center;
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.meta-label {
+  font-weight: 700;
+}
+
+.meta-label.left {
+  color: #1f7a76;
+}
+
+.meta-label.right {
+  color: #f04c00;
+}
+
+.meta-colon {
+  color: #667085;
+  text-align: center;
+}
+
+.meta-value {
+  color: #2f3743;
+}
+
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr {
+    break-inside: avoid;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="content">
+
+<!-- PRESCRIPTION META DETAILS -->
+<div class="meta-grid">
+  <div class="meta-grid-inner">
+    <div class="meta-col">
+      <div class="meta-row">
+        <div class="meta-label left">Patient Name</div>
+        <div class="meta-colon">:</div>
+        <div class="meta-value">Rohan Gupta</div>
+      </div>
+      <div class="meta-row">
+        <div class="meta-label left">Age / Gender</div>
+        <div class="meta-colon">:</div>
+        <div class="meta-value">34Y / Male</div>
+      </div>
+      <div class="meta-row">
+        <div class="meta-label left">Visit ID</div>
+        <div class="meta-colon">:</div>
+        <div class="meta-value">OPD-2026-0327-194</div>
+      </div>
+      <div class="meta-row">
+        <div class="meta-label left">UHID</div>
+        <div class="meta-colon">:</div>
+        <div class="meta-value">UH-110001-8891</div>
+      </div>
+      <div class="meta-row">
+        <div class="meta-label left">Allergy</div>
+        <div class="meta-colon">:</div>
+        <div class="meta-value">No known drug allergy</div>
+      </div>
+    </div>
+
+    <div class="meta-col">
+      <div class="meta-row">
+        <div class="meta-label right">Date</div>
+        <div class="meta-colon">:</div>
+        <div class="meta-value">27-03-2026</div>
+      </div>
+      <div class="meta-row">
+        <div class="meta-label right">Weight</div>
+        <div class="meta-colon">:</div>
+        <div class="meta-value">78 kg</div>
+      </div>
+      <div class="meta-row">
+        <div class="meta-label right">BP</div>
+        <div class="meta-colon">:</div>
+        <div class="meta-value">146 / 92 mmHg</div>
+      </div>
+      <div class="meta-row">
+        <div class="meta-label right">Consultation Type</div>
+        <div class="meta-colon">:</div>
+        <div class="meta-value">In-Clinic</div>
+      </div>
+      <div class="meta-row">
+        <div class="meta-label right">Prescription ID</div>
+        <div class="meta-colon">:</div>
+        <div class="meta-value">RX-DOC-2026-03-27-194</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CHIEF COMPLAINTS -->
+<div class="section">
+<div class="title">CHIEF COMPLAINTS / DIAGNOSIS</div>
+<div class="remark">
+Headache and fatigue for 10 days.<br>
+Post-meal heaviness and intermittent acidity.<br>
+Working diagnosis: Stage 1 hypertension with dyspepsia.
+</div>
+</div>
+
+<!-- PRESCRIPTION -->
+<div class="section">
+<div class="title">PRESCRIPTION</div>
+<div class="rx-label">Rx</div>
+<table>
+<thead>
+<tr>
+<th>Medicine</th><th>Dose</th><th>Frequency</th><th>Duration</th><th>Instructions</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Telmisartan 40 mg Tablet</td><td>1 tablet</td><td>OD (Morning)</td><td>30 days</td><td>Take after breakfast. Check BP log daily.</td></tr>
+<tr><td>Pantoprazole 40 mg</td><td>1 tablet</td><td>OD (Empty stomach)</td><td>14 days</td><td>Take 30 minutes before breakfast.</td></tr>
+<tr><td>Paracetamol 650 mg</td><td>1 tablet</td><td>SOS</td><td>5 days</td><td>Maximum 3 tablets/day. Keep 6-8 hours gap.</td></tr>
+<tr><td>Vitamin D3 60,000 IU Sachet</td><td>1 sachet</td><td>Weekly</td><td>8 weeks</td><td>Dissolve in milk/water after lunch on Sundays.</td></tr>
+</tbody>
+</table>
+<div class="remark">
+Do not self-discontinue antihypertensive medication without physician advice. Seek immediate care if severe headache, chest pain, or breathlessness occurs.
+</div>
+</div>
+
+<!-- VITALS -->
+<div class="section">
+<div class="title">VITALS & FINDINGS</div>
+<table>
+<thead>
+<tr><th>Metric</th><th>Value</th><th>Metric</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Pulse</td><td>86/min</td><td>SpO2</td><td>98%</td></tr>
+<tr><td>Temperature</td><td>98.4 F</td><td>BMI</td><td>27.2</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- INVESTIGATIONS -->
+<div class="section">
+<div class="title">INVESTIGATIONS ADVISED</div>
+<table>
+<thead>
+<tr><th>Test Panel</th><th>Status</th></tr>
+</thead>
+<tbody>
+<tr><td>CBC, FBS, HbA1c</td><td class="normal">ADVISED</td></tr>
+<tr><td>Lipid profile (fasting)</td><td class="normal">ADVISED</td></tr>
+<tr><td>LFT, KFT, Serum electrolytes</td><td class="normal">ADVISED</td></tr>
+<tr><td>Urine routine</td><td class="normal">ADVISED</td></tr>
+<tr><td>ECG (baseline)</td><td class="normal">ADVISED</td></tr>
+</tbody>
+</table>
+</div>
+
+<!-- FOLLOW-UP -->
+<div class="section">
+<div class="title">FOLLOW-UP</div>
+<div class="remark">
+Review after 14 days.<br>
+Next visit: 10 Apr 2026, 10:30 AM.<br>
+Carry BP log and investigation reports on next consultation.
+</div>
+</div>
+
+<!-- SIGNATURE -->
+<div class="section">
+<div class="title">DOCTOR AUTHORIZATION</div>
+<div class="remark">
+Dr. Anjali Verma<br>
+MD (Internal Medicine)<br>
+Reg No: DMC/IM/45821
+</div>
+</div>
+
+</div>
+</body>
+</html>

@@ -5,7 +5,8 @@
   "main": "generate-pdf.js",
   "scripts": {
     "pdf": "node generate-pdf.js",
-    "pdf:index": "node generate-pdf.js index.html report.pdf"
+    "pdf:index": "node generate-pdf.js index.html report.pdf",
+    "pdf:invoice": "node generate-pdf.js invoice/index.html invoice/invoice.pdf"
   },
   "repository": {
     "type": "git",

@@ -11,3 +11,7 @@ This generates `report.pdf` from `index.html` using Puppeteer with reliable page
 Optional custom input/output:
 
 `node generate-pdf.js input.html output.pdf`
+
+Invoice quick command:
+
+`npm run pdf:invoice`

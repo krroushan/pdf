@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Invoice 133</title>
+
+<style>
+@page {
+  size: A4;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.content {
+  margin: 0;
+}
+
+.section {
+  margin-top: 14px;
+  page-break-inside: avoid;
+  break-inside: avoid-page;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0a8f7a;
+  page-break-after: avoid;
+  break-after: avoid-page;
+}
+
+.invoice-strip {
+  margin-top: 8px;
+  border: 1px solid #c7cfd8;
+  background: #f7f9fc;
+  padding: 10px 12px;
+}
+
+.strip-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px 20px;
+  align-items: start;
+}
+
+.strip-left {
+  display: grid;
+  row-gap: 6px;
+}
+
+.meta-row {
+  display: grid;
+  grid-template-columns: 130px 12px 1fr;
+  align-items: center;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.meta-label {
+  font-weight: 700;
+  color: #1f7a76;
+}
+
+.meta-colon {
+  text-align: center;
+  color: #667085;
+}
+
+.meta-value {
+  color: #2f3743;
+}
+
+.paid-chip {
+  border: 1px solid #16a34a;
+  background: #eaf9ee;
+  color: #15803d;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.card {
+  border: 1px solid #d9dde4;
+  background: #fff;
+  page-break-inside: avoid;
+  break-inside: avoid-page;
+}
+
+.card-head {
+  border-bottom: 1px solid #e5e7eb;
+  background: #f8fafc;
+  padding: 8px 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0a8f7a;
+}
+
+.card-body {
+  padding: 10px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+  font-size: 13px;
+  page-break-before: avoid;
+  break-inside: auto;
+}
+
+thead {
+  display: table-header-group;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  vertical-align: top;
+}
+
+th {
+  background: #f5f5f5;
+  text-align: left;
+}
+
+tr {
+  break-inside: avoid;
+}
+
+.num {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.totals-box {
+  margin-top: 10px;
+  border: 1px solid #d9dde4;
+  background: #fbfcfe;
+  padding: 8px 10px;
+}
+
+.total-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  font-size: 13px;
+  padding: 4px 0;
+}
+
+.total-row strong {
+  color: #0f172a;
+}
+
+.grand {
+  border-top: 1px solid #d6dbe4;
+  margin-top: 4px;
+  padding-top: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.words {
+  margin-top: 10px;
+  border-left: 4px solid #0a8f7a;
+  background: #f9fbfd;
+  padding: 10px;
+  font-size: 13px;
+}
+
+.thank-you {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 13px;
+  color: #374151;
+  font-weight: 700;
+}
+
+@media print {
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr {
+    break-inside: avoid;
+  }
+}
+</style>
+</head>
+
+<body>
+<div class="content">
+
+  <div class="section">
+    <div class="title">INVOICE</div>
+    <div class="invoice-strip">
+      <div class="strip-grid">
+        <div class="strip-left">
+          <div class="meta-row"><div class="meta-label">Company Name</div><div class="meta-colon">:</div><div class="meta-value">Docnity Diagnostics</div></div>
+          <div class="meta-row"><div class="meta-label">Invoice #</div><div class="meta-colon">:</div><div class="meta-value">133</div></div>
+          <div class="meta-row"><div class="meta-label">Date</div><div class="meta-colon">:</div><div class="meta-value">27-03-2026</div></div>
+          <div class="meta-row"><div class="meta-label">Time</div><div class="meta-colon">:</div><div class="meta-value">08:30</div></div>
+        </div>
+        <div class="paid-chip">PAID</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section two-col">
+    <div class="card">
+      <div class="card-head">BILL TO</div>
+      <div class="card-body">
+        <strong>Roushan</strong><br>
+        J3MR+WHH, Road No. 23, Rajeev Nagar, Digha Ghat,<br>
+        Patna, Bihar 800024, India<br>
+        Phone: 2556668844
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">PAYMENT DETAILS</div>
+      <div class="card-body">
+        <div class="meta-row"><div class="meta-label">Status</div><div class="meta-colon">:</div><div class="meta-value">Completed</div></div>
+        <div class="meta-row"><div class="meta-label">Method</div><div class="meta-colon">:</div><div class="meta-value">Cash After Service</div></div>
+        <div class="meta-row"><div class="meta-label">Payment ID</div><div class="meta-colon">:</div><div class="meta-value">Paid By Cash</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="title">SERVICE DETAILS</div>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 48px;">#</th>
+          <th>Service</th>
+          <th style="width: 70px;">Qty</th>
+          <th style="width: 110px;">Rate</th>
+          <th style="width: 120px;">Amount</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Complete Blood Count (CBC)</td>
+          <td class="num">2</td>
+          <td class="num">Rs. 497</td>
+          <td class="num">Rs. 994</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Vitamin D</td>
+          <td class="num">2</td>
+          <td class="num">Rs. 497</td>
+          <td class="num">Rs. 994</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="totals-box">
+      <div class="total-row"><span>Actual Price</span><span><strong>Rs. 1,988</strong></span></div>
+      <div class="total-row"><span>Taxable Amount</span><span><strong>Rs. 1,988</strong></span></div>
+      <div class="total-row"><span>Booking Total (With Tax)</span><span><strong>Rs. 1,988</strong></span></div>
+      <div class="total-row"><span>Booking Total</span><span><strong>Rs. 1,988</strong></span></div>
+      <div class="total-row grand"><span>GRAND TOTAL</span><span>Rs. 1,988</span></div>
+      <div class="total-row"><span>Balance Due</span><span><strong>Rs. 0</strong></span></div>
+    </div>
+
+    <div class="words">
+      <strong>AMOUNT IN WORDS:</strong><br>
+      One Thousand Nine Hundred Eighty Eight Rupees Only
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="thank-you">Thank you for your business!</div>
+  </div>
+
+</div>
+</body>
+</html>
